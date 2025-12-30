@@ -3,18 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
+    <title>Sankar K | Software Developer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <style>
+        :root {
+            --primary: #dc2626;
+            --primary-hover: #b91c1c;
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+            --text-dim: #94a3b8;
+            --font-family: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 90%;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 40px;
+        }
+
+        /* Sidebar Styles */
+        aside {
+            position: sticky;
+            top: 40px;
+            height: fit-content;
+        }
+
+        .profile-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border-bottom: 4px solid var(--primary);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 { font-size: 1.8rem; color: var(--text); margin-bottom: 5px; }
+        .headline { color: var(--primary); font-weight: bold; margin-bottom: 20px; display: block; font-size: 0.9rem; }
+        
+        .contact-info { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 20px; }
+        .contact-info div { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+
+        /* Button Styles */
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            animation: pulse 2s infinite;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: scale(1.02);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text);
+            border: 1px solid var(--text-dim);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .social-links a {
+            color: var(--text-dim);
+            font-size: 1.4rem;
+            transition: color 0.3s;
+        }
+        .social-links a:hover { color: var(--primary); }
+
+        /* Main Content Sectioning */
+        main { display: flex; flex-direction: column; gap: 40px; }
+        section h2 { 
+            font-size: 1.4rem; 
+            margin-bottom: 20px; 
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        section h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .skill-name { color: var(--primary); font-weight: bold; display: block; margin-bottom: 4px; }
+        .skill-desc { font-size: 0.75rem; color: var(--text-dim); }
+
+        @media (max-width: 850px) {
+            .container { grid-template-columns: 1fr; }
+            aside { position: relative; top: 0; }
+        }
+    </style>
 </head>
 <body>
-    <iframe src="https://codesankarx.github.io/resume/resume.pdf" width="100%" height="100%">
-    This browser does not support PDFs. Please download the PDF to view it: 
-    <a href="https://codesankarx.github.io/resume/resume.pdf">Download PDF</a>
-</iframe>
 
-<iframe src="https://codesankarx.github.io/resume/resume1.pdf" width="100%" height="100%">
-    This browser does not support PDFs. Please download the PDF to view it: 
-    <a href="https://codesankarx.github.io/resume/resume1.pdf">Download PDF</a>
-</iframe>
+    <div class="container">
+        <aside>
+            <div class="profile-card">
+                <h1>Sankar K</h1>
+                <span class="headline">SOFTWARE DEVELOPER</span>
+                
+                <div class="contact-info">
+                    <div>📧 sankar.work.email@gmail.com</div>
+                    <div>📞 +91 6379964776</div>
+                    <div>📍 Chennai, India</div>
+                </div>
+
+                <div class="btn-container">
+                    <a href="https://codesankarx.github.io/resume/resume.pdf" class="btn btn-primary" download>
+                        <span>Download Resume</span>
+                    </a>
+                    <a href="https://codesankarx.github.io/resume/resume1.pdf" class="btn btn-secondary" download>
+                        <span>Download Version 2</span>
+                    </a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/CodeSankarX" target="_blank"><i class="devicon-github-original"></i></a>
+                    <a href="https://linkedin.com/in/sankar-k-031748277" target="_blank"><i class="devicon-linkedin-plain"></i></a>
+                    <a href="https://leetcode.com/u/sankarkk" target="_blank" title="LeetCode"><i class="devicon-python-plain"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <section id="summary">
+                <h2>About Me</h2>
+                <p style="color: var(--text-dim);">
+                    Backend Developer with over 2+ years of experience in crafting scalable, high-performance applications using Java and Spring Boot. Skilled in system architecture and API development.
+                </p>
+            </section>
+
+            <section id="experience">
+                <h2>Experience</h2>
+                <div class="card">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                        <h3 style="color:var(--primary)">Zoho</h3>
+                        <span style="font-size:0.8rem; color:var(--text-dim)">Oct 2023 - Present</span>
+                    </div>
+                    <p style="font-weight:bold; margin-bottom:10px;">Member Technical Staff</p>
+                    
+                </div>
+
+                <div class="card">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                        <h3 style="color:var(--primary)">Zoho</h3>
+                        <span style="font-size:0.8rem; color:var(--text-dim)">Sept 2022 - Mar 2023</span>
+                    </div>
+                    <p style="font-weight:bold; margin-bottom:10px;">Project Trainee</p>
+                   
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <span class="skill-name">Java / Spring Boot</span>
+                        <span class="skill-desc">LLD, Hexagonal Architecture, REST</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Storage</span>
+                        <span class="skill-desc">Postgres, Redis, MySQL, S3</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Communication</span>
+                        <span class="skill-desc">Pub/Sub, WebSockets, REST API</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Testing</span>
+                        <span class="skill-desc">TDD, JUnit, Postman</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
 </body>
 </html>
-
